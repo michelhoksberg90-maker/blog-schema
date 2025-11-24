@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {"type": "string", "description": "The main title of the blog article"},
+    "slug": {"type": "string", "description": "URL-friendly version of the title"},
+    "meta_title": {"type": "string", "description": "SEO meta title"},
+    "meta_description": {"type": "string", "description": "SEO meta description"},
+    "h1": {"type": "string", "description": "Main heading of the article"},
+    "intro_direct_answer_html": {"type": "string", "description": "Direct answer in HTML format"},
+    "sections_html": {"type": "string", "description": "Main content sections in HTML format"},
+    "faqs_html": {"type": "string", "description": "FAQ section in HTML format"},
+    "internal_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "anchor": {"type": "string"},
+          "url": {"type": "string"}
+        },
+        "required": ["anchor", "url"]
+      }
+    },
+    "schema_article_jsonld": {"type": "string", "description": "JSON-LD schema for the article"},
+    "schema_faq_jsonld": {"type": "string", "description": "JSON-LD schema for the FAQ section"},
+    "excerpt": {"type": "string", "description": "Brief excerpt of the article"}
+  },
+  "required": ["title", "slug", "meta_title", "meta_description", "h1", "intro_direct_answer_html", "sections_html", "faqs_html", "internal_links", "schema_article_jsonld", "schema_faq_jsonld", "excerpt"]
+}
